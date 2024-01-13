@@ -5,7 +5,7 @@
        <FullClassName>FirstPlugin.Class1</FullClassName>
        <Description>Places 10 vertical and 10 horizontal grids</Description>
        <VisibilityMode>AlwaysVisible</VisibilityMode>
-       <Assembly>D:\VEC-UA\Plugins\First\FirstPlugin\FirstPlugin\bin\Debug\FirstPlugin.dll</Assembly>
+       <Assembly>.\FirstPlugin.dll</Assembly>
        <AddInId>1F029CD8-EE35-4ED5-8B96-9B3DDE93EC9D</AddInId>
     <VendorId>VEC-UA</VendorId>
     <VendorDescription>Some vendor description about VEC-UA</VendorDescription>
