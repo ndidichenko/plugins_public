@@ -9,6 +9,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.Attributes;
+using System.IO;
+using System.Collections.Specialized;
 
 namespace FirstPlugin
 {
@@ -29,9 +31,20 @@ namespace FirstPlugin
             pushButton.ToolTip = "Adds 10 grids horizontally and 10 grids vertically, named by letters and numbers resp.";
 
             //Bitmap icon 32x32
-            Uri urlImage = new Uri(@"C:\ProgramData\Autodesk\Revit\Addins\2024\icon.png");
-            BitmapImage bitmapImage = new BitmapImage(urlImage);
-            pushButton.LargeImage = bitmapImage;
+
+            string imgName = @"icon.png";
+            string imgPath = Path.Combine(Path.GetDirectoryName(thisAssemblyPath), imgName);
+            if (File.Exists(imgPath))
+            {
+                Uri urlImage = new Uri(imgPath);
+                BitmapImage bitmapImage = new BitmapImage(urlImage);
+                pushButton.LargeImage = bitmapImage;
+
+            }
+            else
+            {
+                TaskDialog.Show("Image not found", "The image file 'icon.png' is not found.");
+            }
 
             return Result.Succeeded;
 
